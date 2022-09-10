@@ -1,5 +1,6 @@
 class Output(private val size: Int, private val classicalSize: Int?= null) {
     var circuit = Circuit(size)
+
     val first = 0
     val last: Int get() = size - 1
 
@@ -30,15 +31,15 @@ class Output(private val size: Int, private val classicalSize: Int?= null) {
     }
 
     fun readAllReverse() {
-        if (size == circuit?.size) {
-            circuit?.qbits?.reversed()?.forEach {
-                circuit?.add(
+        if (size == circuit.size) {
+            circuit.qbits.reversed().forEach {
+                circuit.add(
                     Qbit.READ from (it.index to it.index)
                 )
             }
         } else {
-            circuit?.qbits?.reversed()?.forEach {
-                circuit?.add(
+            circuit.qbits.reversed().forEach {
+                circuit.add(
                     Qbit.READ from (it.index to it.index)
                 )
             }

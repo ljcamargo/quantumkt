@@ -12,7 +12,9 @@ open class Circuit(private val span: Int): Entity() {
     var inverseSpan = 0
 
     val instructions = ArrayList<Instruction>()
-    val qbits: Array<Qbit> = Array(span) { Qbit(this, it) }
+    val qbits: Array<Qbit> = Array(span) {
+        Qbit(this, it)
+    }
 
     val size: Int
         get() = qbits.size
